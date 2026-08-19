@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/app_controller.dart';
 import 'package:my_app/home_page.dart';
+import 'package:my_app/login_page.dart';
 
 class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -14,7 +15,11 @@ class AppWidget extends StatelessWidget {
                 ? Brightness.dark
                 : Brightness.light,
           ),
-          home: Homepage(),
+         initialRoute: '/',
+         routes: {
+          '/':(context) => LoginPage(),
+          '/home':(context) => Homepage(),
+         },
         );
       },
     );

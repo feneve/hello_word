@@ -16,14 +16,10 @@ class HomepageState extends State<Homepage> {
       appBar: AppBar(
         title: Text("Duvido vc apertar"),
         backgroundColor: Colors.blue,
+        actions: [CustomSwitch()],
       ),
       body: Center(
-        child: Switch(
-          value: AppController.instance.isDartTheme,
-          onChanged: (value) {
-            AppController.instance.changeTheme();
-          },
-        ),
+        child: Text("Contador $counter",style: TextStyle(fontSize: 30),),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
@@ -34,5 +30,18 @@ class HomepageState extends State<Homepage> {
         },
       ),
     );
+  }
+}
+class CustomSwitch extends StatelessWidget {
+  const new({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  Switch(
+          value: AppController.instance.isDartTheme,
+          onChanged: (value) {
+            AppController.instance.changeTheme();
+          },
+        );
   }
 }
