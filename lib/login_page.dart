@@ -14,11 +14,13 @@ String password = "";
   @override
   Widget build(BuildContext context) {  
     return Scaffold(
+      
       appBar:AppBar(
         backgroundColor: Colors.blueAccent,
         title:Text("Vamos Contar") ,
       ) ,
-      body:SingleChildScrollView(
+      body:Column(
+      children:[ SingleChildScrollView(
       child: SizedBox(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
@@ -27,10 +29,15 @@ String password = "";
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              SizedBox(
+                
+                child: Image.asset("assents/logo.webp"),
+              ),SizedBox(height: 15.0),
               TextField(
                 onChanged: (text){
                   email = text;
                 },
+
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   labelText: "Email",
@@ -38,7 +45,7 @@ String password = "";
                 
                 ),
               ),
-              SizedBox(height: 18.0),
+              SizedBox(height: 15.0),
               TextField(
                 onChanged: (text){
                   password = text;
@@ -74,7 +81,7 @@ String password = "";
           ),
         ),
       ) 
-      ),
-    );
+      )]
+    ),);
   }
 }

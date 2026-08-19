@@ -13,12 +13,29 @@ class HomepageState extends State<Homepage> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          children: [
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Inicio'),
+              subtitle: Text("Seção Finalizada"),
+              onTap: (){
+                Navigator.of(context).pushReplacementNamed('/');
+
+              },
+            )
+          ],
+        ),
+      ),
       appBar: AppBar(
         title: Text("Duvido vc apertar"),
         backgroundColor: Colors.blue,
         actions: [CustomSwitch()],
       ),
-      body: Center(
+      
+      body: 
+      Center(
         child: Text("Contador $counter",style: TextStyle(fontSize: 30),),
       ),
       floatingActionButton: FloatingActionButton(
